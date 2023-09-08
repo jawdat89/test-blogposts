@@ -1,0 +1,102 @@
+---
+title: "This is my New Article"
+date: "2023-09-18"
+tags: ["next.js", "nextjs", "new"]
+---
+
+We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
+
+```ts
+const sum = (num1: number, num2: number): number => {
+  return num1 + num2;
+};
+
+console.log(sum(4, 8)); //12
+```
+
+You can use Static Generation for many types of pages, including:
+
+- Marketing pages
+- Blog posts
+- E-commerce product listings
+- Help and documentation
+
+You should ask yourself: "Can I pre-render this page **ahead** of a user's request?" If the answer is yes, then you should choose Static Generation.
+
+On the other hand, Static Generation is **not** a good idea if you cannot pre-render a page ahead of a user's request. Maybe your page shows frequently updated data, and the page content changes on every request.
+
+In that case, you can use **Server-Side Rendering**. It will be slower, but the pre-rendered page will always be up-to-date. Or you can skip pre-rendering and use client-side JavaScript to populate data.
+
+Today, websites are much like applications. You can send messages, transact, shop, and much more. In short, more interaction is needed on the users end. Hence server-side rendering can longer handle all this at once. It is taking a backseat and giving way to many advanced rendering technologies.
+
+In the past history of development, websites were just basic information with less or no on-page interactions. They were static web pages with no dynamic elements. HTML, CSS, and JavaScript are the standard ways to style, script, and display a page on a browser. To display these HTML elements on the screen, you had to prepare an HTML document and send it in on the server-side.
+
+When a user requested a page, the server would convert the HTML elements to meaningful information on the user’s screen. Websites were pretty much static. Server-side rendering was the only approach to load a .html page. This approach worked great at the time as most pages displayed plain text and images.
+
+Fast-forward to today, this is no longer the case, and websites have advanced. Corporates want to get the dynamic content and display it right. They want websites that load fast and smooth, with flawless performance, to have a good user experience, and get search engine optimization right on search ranking results. As websites are the sales lead for most companies.
+
+These new advanced rendering technologies include Client-Side Rendering (CSR), Server-Side Rendering (SSR), and Static-Site Generation (Pre-rendering). Developers often find themselves confused about these terms. If you find yourself in this circle, this tutorial is for you. We’ll discuss these technical terms, explore their pros and cons, and when to consider approach A or B.
+
+**Client-Side Rendering (CSR)**
+
+Client-Side rendering became popular after the introduction of JavaScript frameworks, which incorporated this style of development. These frameworks include _Angular_, _React_, _Vue.js_, etc.
+
+In a client-Side Rendered web application, JavaScript controls what is displayed on the page. Typically, instead of loading all the web content using the HTML documents, a JavaScript file is included to handle the dynamic architecture of the website loading.
+
+This is what happens when the website is rendered on the client-side.
+
+- A user sends a request to access the web content on a browser using the website address (link).
+- The server serves up the static files (CSS and HTML) to the client’s browser on the client’s first request for the website.
+- The client browser will download the HTML content first and then JavaScript. These HTML files link the JavaScript. This loading process happens as the user sees the loading symbols defined by the web developer. The site is not yet visible to the user.
+- After the browser downloads the JavaScript, content is dynamically generated on the client’s browser.
+- The web content becomes visible as the client navigates and interacts with the website.
+
+This process means that the initial load is prolonged. After initial load time, the website’s navigation will be super smooth and super fast, only having to make API calls to get the content dynamically.
+
+The initial load is naturally slow since the browser is trying to load the initial run-time data of the website to the client’s browser.
+
+After this is over, the web will load dynamically. The JavaScript framework controls the website navigation using a {Content Delivery Network}(/cdn-edge-compute-platform/) to process DOM in the client’s browser.
+
+The process involves fetching and processing data on the client-side (browser) and not the web server, hence the name “client-side rendering”.
+
+A great use case of Client-Side Rendering is a single-page application (SPA). In a SPA, each page is rendered on the client browser. The server only serves one single HTML document.
+
+Once the HTML is loaded, the JavaScript frameworks such as React will control the website’s DOM structure on the browser. In this case, each page will load from the data history as fetched by the framework’s API. Once the initial load is over, accessing a different route or reloading the page will be super fast.
+
+The JavaScript frameworks that supports client-side rendering development style includes _Angular_, _React_, and *Vue.js*s.
+
+**Server-Side Rendering (SSR)**
+
+SSR is one of the commonly used rendering solutions. It is pretty much the opposite of the client-side rendering.
+
+With the SSR solution, rendering is conducted by the server. The user makes a request to the server; the server processes the HTML, CSS, and JavaScript on-demand and delivers a fully populated page to the user’s browser.
+
+Unlike Client-Side Rendering, every subsequent time the user takes action to visit a different page, the rendering process repeats. The server will serve the page on demand every single time. The browser is constantly making requests to the server for every new page, and each request.
+
+The downside of SSR is that it is resource-intensive and delays the content delivery to the user. It increases the page load time compared to single-paged apps. This is because the server has to render the dynamic content repeatedly. Whereas, on the CSR, the content is static and is displayed almost instant on page reload.
+
+When your site is experiencing an influx of users, it might result in connection errors. This happens when too many users are trying to access the resources, and your backend server does not have enough computing power to process all of those requests.
+
+In this approach, everything sent to the browser comes from a server. The server handles getting the web content and processing and displaying it on the browser. Every processing is done on the server every single time a request comes in, hence the name Server-Side Rendering.
+
+**Static-Site Generation (SSG)**
+
+Basically, a Static-Site Generator is a program or a tool used to generate static HTML websites and pages based on raw data and templates. Static-Site Generator automates the process of having to code HTML pages manually.
+
+These generators pre-build HTML pages and make them available to the user ahead of time. This means that whenever a user requests a page, it loads with no delay. This happens so fast as the site is static and the generator renders the pages at build time.
+
+A close relative of Static-Site Generators is content management systems (CMS) such as WordPress. A content management tool is used to generate and manage web content and web pages. They both use the concept of templates to avoid writing, formatting, and coding the web pages manually.
+
+In a CMS case, content is stored in the CMS databases, and when the user requests the page, the server queries this content from this database, fills it in a template that fits this web content, generates the requested page, and serves it to the user on the browser.
+
+On the other hand, Static-Site Generation uses the same concept on templates to automatically generate the pages. However, unlike CMS, the content is static, and templates load ahead of time. The pages are instantly ready to be displayed on the user’s browser.
+
+This means that the server makes no API calls to renders any HTML documents. The pages are rendered during the build-up phase. All of your pages are going to load super quickly because they’re already pre-cached, pre-generated, and pre-rendered.
+
+Common platforms that offer static site hosting services include _Section_, _GitHub_, and _Netlify_. You don’t need a database of your own. Thus, this makes it incredibly easier to use such hosting services and run statically generated pages with automated builds.
+
+Some of the popular Static-Site Generator tools include _Next.js_, _Gatsby_, _Jekyll_, and _Hugo_, etc.
+
+One of the Static-Site Generator tools I would recommend checking out is Next.js. Next.js gives you the benefits of static site generation with server-side rendering flexibility. _Incremental Static Regeneration_ provides the benefits of Static Site Generation (SSG) and Server Side Rendering (SSR).
+
+The feature allows you to update static content after you have already built your site. Meaning your users get a blazing fast experience with the latest data. Check out this tutorial and learn how to use Next.js.
